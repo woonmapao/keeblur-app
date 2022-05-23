@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face {
+    font-family: MinimalBold;
+    src: url('./fonts/FC\ Minimal\ Bold.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: MinimalRecular;
+    src: url('./fonts/FC\ Minimal\ Regular.ttf');
+    font-weight: 500;
+}
+
+@layer base{
+    body{
+        @apply bg-black
+    }
+}
