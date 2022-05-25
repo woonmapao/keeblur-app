@@ -18,11 +18,16 @@ const Sliders = ({ slides }: Sliders) => {
     }
     useEffect(() => {
         window.addEventListener("scroll", handleScroll)
+        setSlider()
         return () => window.removeEventListener("scroll", handleScroll)
     }, [])
     
 
-    
+    const setSlider = ()=>{
+        setInterval(()=>{
+            nextSlide()
+        },6000)
+    }
 
     const nextSlide = () => {
         count = (count + 1) % length
