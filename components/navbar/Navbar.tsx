@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { FaCaretDown, FaShoppingCart, FaUserAlt, FaSearch, FaBars, FaRegWindowClose } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
+
 const Navbar = () => {
     const [isSroll, setIsSroll] = useState(false)
     const [isOpenCate, setIsOpenCate] = useState(false)
@@ -25,8 +26,9 @@ const Navbar = () => {
     }, [])
     return (
         <>
-            {isSroll ? <header>
-                <div className='font-[MinimalBold] text-2xl flex fixed  top-0 w-full  justify-between items-center  md:px-24 px-10 h-24 bg-white transition-all duration-300'>
+            {isSroll ? 
+            <header>
+                <div className='font-[MinimalBold] text-2xl flex fixed  top-0 w-full  justify-between items-center  md:px-24 px-10 h-24 bg-white transition-all duration-300 z-50'>
                     <div className=''>
                         <Link href="/">
                             <a>
@@ -35,7 +37,7 @@ const Navbar = () => {
                         </Link>
 
                     </div>
-                    <div className='font-[MinimalRecular] hidden md:flex text-2xl space-x-8'>
+                    <div className='font-[MinimalRecular] hidden md:flex text-xl space-x-8'>
                         <Link href="/shops">
                             <a>
                                 <div className='hover:text-neutral-500'>SHOP</div>
@@ -70,7 +72,7 @@ const Navbar = () => {
                             <motion.div whileHover={{ scale: 1.1 }} className="pl-4"><FaUserAlt /></motion.div>
                         </div>
                     </div> : <div className=''></div>}
-                {isOpenCate ? <div className='md:flex hidden flex-col fixed w-[10%] left-[44%] justify-start  top-[5.5rem] p-4 bg-[#e1e3e6] text-black font-[MinimalRecular]  rounded-md'>
+                {isOpenCate ? <div className='md:flex hidden flex-col fixed w-[10%] left-[44%] justify-start  top-[4.5rem] p-4 bg-[#e1e3e6] text-black font-[MinimalRecular]  rounded-md'>
                     <div className=''>Keyboards</div>
                     <div className='pt-2'>Keycaps</div>
                     <div className='pt-2'>Switchese</div>
@@ -79,7 +81,7 @@ const Navbar = () => {
                     <div>Hi</div>}
             </header> :
                 <header>
-                    <div className='font-[MinimalBold] text-2xl flex z-50 justify-between items-center bg-transparent md:px-24 px-10 h-24 text-white transition-all duration-300'>
+                    <div className='font-[MinimalBold] text-2xl relative flex z-50 justify-between items-center bg-transparent md:px-24 px-10 h-24 text-white transition-all duration-300 '>
                         <div className=''>
                             <Link href="/">
                                 <a>
@@ -88,7 +90,7 @@ const Navbar = () => {
                             </Link>
 
                         </div>
-                        <div className='font-[MinimalRecular] hidden md:flex text-2xl space-x-8'>
+                        <div className='font-[MinimalRecular] hidden md:flex text-xl space-x-8'>
                             <Link href="/shop">
                                 <a>
                                     <div className='hover:text-neutral-500'>SHOP</div>
@@ -142,7 +144,12 @@ const Navbar = () => {
                         <div className='pt-2'>Deskmat</div>
                     </div> :
                         <div></div>}
-                </header>}
+                </header>
+                }
+                
+
+                
+                
             {/* <header>
                 <div className='font-[MinimalBold] text-2xl flex  justify-between items-center  md:px-24 px-10 h-24'>
                     <div className=''>
