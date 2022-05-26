@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react'
 import SlidersData from './SlidersData'
-import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft, FaAngleDown } from 'react-icons/fa';
 import { motion } from 'framer-motion'
 import { setInterval } from 'timers';
+import {loopdown} from '../../Variants/Variants'
 
 type Sliders = {
     slides: any
@@ -18,7 +19,7 @@ const Sliders = ({ slides }: Sliders) => {
     }
     useEffect(() => {
         window.addEventListener("scroll", handleScroll)
-        setSlider()
+        // setSlider()
         return () => window.removeEventListener("scroll", handleScroll)
     }, [])
     
@@ -26,7 +27,7 @@ const Sliders = ({ slides }: Sliders) => {
     const setSlider = ()=>{
         setInterval(()=>{
             nextSlide()
-        },6000)
+        },8000)
     }
 
     const nextSlide = () => {
@@ -54,16 +55,20 @@ const Sliders = ({ slides }: Sliders) => {
                 
                 {SlidersData.map((slide, index) => {
                     return <motion.div
-                        className={index === current ? ' transition-opacity opacity-1 duration-1000 -z-50 ' : ' transition-opacity opacity-5 duration-1000 -z-50 '}
+                        className={index === current ? ' transition-opacity opacity-1 duration-500 -z-50 overflow-hidden' : ' transition-opacity opacity-5 duration-500 -z-50 overflow-hidden '}
                         key={index}
                     >
                         {index === current && (
-                            <img src={slide.image} alt={slide.titleName} className='w-full h-screen relative top-[-100px] -z-50' style={{ transform: `translateY(${offsetY * 0.5}px)` }} />
+                            <div className='h-[100vh] w-[100%] object-contain'>
+                                <img src={slide.image} alt={slide.titleName} className='absolute w-[100%] h-screen object-cover -z-10 top-0' style={{ transform: `translateY(${offsetY * 0.5}px)` }}  />
+                            </div>
+                            
                         )}
                     </motion.div>
                 })}
-                <FaArrowAltCircleLeft className='text-white text-xl absolute top-[270px] left-40 md:top-[50%] md:left-24' onClick={prevSlide} />
-                <FaArrowAltCircleRight className='text-white text-xl absolute top-[270px] right-40 md:top-[50%] md:right-24' onClick={nextSlide} />
+                <motion.div ><FaArrowAltCircleLeft className='text-white hover:text-red-600 text-xl absolute top-[80%] left-40 md:top-[50%] md:text-white md:left-24 cursor-pointer' onClick={prevSlide} /></motion.div>
+                <motion.div ><FaArrowAltCircleRight className='text-white  hover:text-red-600 text-xl absolute top-[80%] right-40 md:top-[50%] md:right-24 cursor-pointer' onClick={nextSlide} /></motion.div>
+                <motion.div variants={loopdown} initial="initial" animate="animate" className='text-white text-4xl flex justify-center items-center absolute top-[90%] left-[48%]' ><FaAngleDown /></motion.div>
             </section>
         </>
     )

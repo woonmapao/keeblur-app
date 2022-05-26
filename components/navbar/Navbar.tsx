@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { FaCaretDown, FaShoppingCart, FaUserAlt, FaSearch, FaBars, FaRegWindowClose } from 'react-icons/fa'
 import { motion } from 'framer-motion'
+import {fadeIn} from '../Variants/Variants'
 
 
 const Navbar = () => {
     const [isSroll, setIsSroll] = useState(false)
     const [isOpenCate, setIsOpenCate] = useState(false)
     const [isOpenMenu, setIsOpenMenu] = useState(false)
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -27,7 +29,7 @@ const Navbar = () => {
     return (
         <>
             {isSroll ? 
-            <header>
+            <motion.header variants={fadeIn("d")} initial="initial" animate="animate">
                 <div className='font-[MinimalBold] text-2xl flex fixed  top-0 w-full  justify-between items-center  md:px-24 px-10 h-24 bg-white transition-all duration-300 z-50'>
                     <div className=''>
                         <Link href="/">
@@ -44,7 +46,7 @@ const Navbar = () => {
                             </a>
 
                         </Link>
-                        <div className='hover:text-neutral-500' onClick={() => { setIsOpenCate(!isOpenCate) }}>CATEGORIES {isOpenCate ? <span className='text-[14px]'>▲</span> : <span className='text-[14px]'>▼</span>}</div>
+                        <div className='hover:text-neutral-500 cursor-pointer' onClick={() => { setIsOpenCate(!isOpenCate) }}>CATEGORIES {isOpenCate ? <span className='text-[14px]'>▲</span> : <span className='text-[14px]'>▼</span>}</div>
 
                         <Link href="/Contacts">
                             <a>
@@ -72,15 +74,15 @@ const Navbar = () => {
                             <motion.div whileHover={{ scale: 1.1 }} className="pl-4"><FaUserAlt /></motion.div>
                         </div>
                     </div> : <div className=''></div>}
-                {isOpenCate ? <div className='md:flex hidden flex-col fixed w-[10%] left-[44%] justify-start  top-[4.5rem] p-4 bg-[#e1e3e6] text-black font-[MinimalRecular]  rounded-md'>
+                {isOpenCate ? <div className='md:flex hidden flex-col fixed w-[10%] left-[44%] justify-start top-[4.5rem] p-4 bg-[#e1e3e6] text-black font-[MinimalRecular] z-[999] rounded-md'>
                     <div className=''>Keyboards</div>
                     <div className='pt-2'>Keycaps</div>
                     <div className='pt-2'>Switchese</div>
                     <div className='pt-2'>Deskmat</div>
                 </div> :
                     <div>Hi</div>}
-            </header> :
-                <header>
+            </motion.header> :
+                <motion.header>
                     <div className='font-[MinimalBold] text-2xl relative flex z-50 justify-between items-center bg-transparent md:px-24 px-10 h-24 text-white transition-all duration-300 '>
                         <div className=''>
                             <Link href="/">
@@ -97,7 +99,7 @@ const Navbar = () => {
                                 </a>
 
                             </Link>
-                            <div className='hover:text-neutral-500' onClick={() => { setIsOpenCate(!isOpenCate) }}>CATEGORIES {isOpenCate ? <span className='text-[14px]'>▲</span> : <span className='text-[14px]'>▼</span>}</div>
+                            <div className='hover:text-neutral-500 cursor-pointer' onClick={() => { setIsOpenCate(!isOpenCate) }}>CATEGORIES {isOpenCate ? <span className='text-[14px]'>▲</span> : <span className='text-[14px]'>▼</span>}</div>
                             <Link href="/contacts">
                                 <a>
                                     <div className='hover:text-neutral-500'>CONTACT US</div>
@@ -144,7 +146,7 @@ const Navbar = () => {
                         <div className='pt-2'>Deskmat</div>
                     </div> :
                         <div></div>}
-                </header>
+                </motion.header>
                 }
                 
 
