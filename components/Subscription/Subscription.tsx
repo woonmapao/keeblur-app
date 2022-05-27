@@ -2,7 +2,7 @@ import React from 'react'
 
 const Subscription = () => {
   return (
-    <div className='text-black bg-slate-200 flex justify-center items-center py-24'>
+    <div className="text-black bg-gradient-to-r from-sky-500 to-indigo-500 flex justify-center items-center py-24">
         <div className='flex flex-col justify-center items-center bg-blue-600 p-12 text-white font-[MinimalBold] text-xl'>
             <h1 className='text-2xl'>รับส่วนลดและสิทธิพิเศษ!</h1>
             <h2 className='font-[MinimalRecular] pb-4'>เมื่อลงทะเทียนรับข่าวสาร รีวิว โปรโมชั่น</h2>

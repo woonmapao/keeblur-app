@@ -5,10 +5,11 @@ import Contents from '../components/Contents/Contents'
 import Sliders from '../components/herosection/slider/sliders'
 import SlidersData from '../components/herosection/slider/SlidersData'
 import Subscription from '../components/Subscription/Subscription'
+import Footer from '../components/footer/footer'
 
 const Home: NextPage = () => {
   return (
-    <div className="h-full">
+    <div className="">
       <Head>
         <title>Keeblur - Homepages</title>
         <link rel="icon" href="/favicon.ico" />
@@ -17,6 +18,7 @@ const Home: NextPage = () => {
       <Sliders slides={SlidersData}/>
       <Contents/>
       <Subscription/>
+      <Footer/>
     </div>
   )
 }
