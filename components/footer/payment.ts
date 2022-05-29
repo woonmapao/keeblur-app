@@ -9,23 +9,23 @@
 
 const PaymentData = [
     {   
-        image:'images/payment/bbl.png',
+        image:'/images/payment/bbl.png',
         titleName:"bbl"
     },
     {   
-        image:'images/payment/kbank.png',
+        image:'/images/payment/kbank.png',
         titleName:"kbank"
     },
     {   
-        image:'images/payment/scb.png',
+        image:'/images/payment/scb.png',
         titleName:"scb"
     },
     {   
-        image:'images/payment/mastercard.png',
+        image:'/images/payment/mastercard.png',
         titleName:"mastercard"
     },
     {   
-        image:'images/payment/visa.png',
+        image:'/images/payment/visa.png',
         titleName:"visa"
     },
     
