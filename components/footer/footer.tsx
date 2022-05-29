@@ -26,8 +26,8 @@ const Footer = () => {
             <div className='px-24 py-4 '>
                 <h1 className='font-[MinimalBold] text-xl'>Transportation</h1>
                 <div className='flex pl-12 md:h-8 h-5 space-x-8 '>
-                    <img src="images/transport/kerry.png" alt="" />
-                    <img src="images/transport/scg.png" alt="" />
+                    <img src="/images/transport/kerry.png" alt="" />
+                    <img src="/images/transport/scg.png" alt="" />
                 </div>
                 
             </div>
