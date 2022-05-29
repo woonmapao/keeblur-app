@@ -70,15 +70,34 @@ const Navbar = () => {
                         <div>Shop</div>
                         <div className='pt-2'>Categories</div>
                         <div className='flex flex-row pt-2'>
-                            <motion.div whileHover={{ scale: 1.1 }}><FaShoppingCart /></motion.div>
-                            <motion.div whileHover={{ scale: 1.1 }} className="pl-4"><FaUserAlt /></motion.div>
+                            <Link href="/cart">
+                                <a>
+                                    <motion.div whileHover={{ scale: 1.1 }}><FaShoppingCart /></motion.div>
+                                </a>
+                            </Link>
+                            <Link href="/account">
+                                <a>
+                                    <motion.div whileHover={{ scale: 1.1 }}><FaUserAlt /></motion.div>
+                                </a>
+                            </Link>
                         </div>
                     </div> : <div className=''></div>}
                     {isOpenCate ? <div className='md:flex hidden flex-col fixed w-[10%] left-[44%] justify-start top-[4.5rem] p-4 bg-[#e1e3e6] text-black font-[MinimalRecular] z-[999] rounded-md'>
-                        <div className=''>Keyboards</div>
-                        <div className='pt-2'>Keycaps</div>
-                        <div className='pt-2'>Switchese</div>
-                        <div className='pt-2'>Deskmat</div>
+                        <Link href="/">
+                            <a className='p-2 hover:bg-red-500 rounded transition-colors hover:text-white'>Keyboards</a>
+                        </Link>
+                        <Link href="/">
+                            <a className='p-2 hover:bg-red-500 rounded transition-colors hover:text-white'>Keycaps</a>
+                        </Link>
+                        <Link href="/">
+                            <a className='p-2 hover:bg-red-500 rounded transition-colors hover:text-white'>Switchese</a>
+                        </Link>
+                        <Link href="/">
+                            <a className='p-2 hover:bg-red-500 rounded transition-colors hover:text-white'>Deskmat</a>
+                        </Link>
+
+
+
                     </div> :
                         <div>Hi</div>}
                 </motion.header> :
@@ -107,7 +126,12 @@ const Navbar = () => {
                             </Link>
                         </div>
                         <div className='hidden space-x-4 md:flex text-[16px] '>
-                            <motion.div whileHover={{ scale: 1.1 }}><FaShoppingCart /></motion.div>
+
+                            <Link href="/cart">
+                                <a>
+                                    <motion.div whileHover={{ scale: 1.1 }}><FaShoppingCart /></motion.div>
+                                </a>
+                            </Link>
                             <Link href="/account">
                                 <a>
                                     <motion.div whileHover={{ scale: 1.1 }}><FaUserAlt /></motion.div>
@@ -145,10 +169,18 @@ const Navbar = () => {
                         </div>
                     </div> : <div className=''></div>}
                     {isOpenCate ? <div className='md:flex hidden flex-col fixed w-[10%] left-[44%] justify-start top-[4.5rem] p-4 bg-[#282828] text-white font-[MinimalRecular]  rounded-md'>
-                        <div className=''>Keyboards</div>
-                        <div className='pt-2'>Keycaps</div>
-                        <div className='pt-2'>Switchese</div>
-                        <div className='pt-2'>Deskmat</div>
+                        <Link href="/">
+                            <a className='p-2 hover:bg-red-500 rounded transition-colors hover:text-white'>Keyboards</a>
+                        </Link>
+                        <Link href="/">
+                            <a className='p-2 hover:bg-red-500 rounded transition-colors hover:text-white'>Keycaps</a>
+                        </Link>
+                        <Link href="/">
+                            <a className='p-2 hover:bg-red-500 rounded transition-colors hover:text-white'>Switchese</a>
+                        </Link>
+                        <Link href="/">
+                            <a className='p-2 hover:bg-red-500 rounded transition-colors hover:text-white'>Deskmat</a>
+                        </Link>
                     </div> :
                         <div></div>}
                 </motion.header>
