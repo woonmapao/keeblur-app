@@ -14,11 +14,11 @@ const Home: NextPage = () => {
         <title>Keeblur - Homepages</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar/>
-      <Sliders slides={SlidersData}/>
-      <Contents/>
-      <Subscription/>
-      <Footer/>
+      <Navbar />
+      <Sliders slides={SlidersData} />
+      <Contents />
+      <Subscription />
+      <Footer />
     </div>
   )
 }

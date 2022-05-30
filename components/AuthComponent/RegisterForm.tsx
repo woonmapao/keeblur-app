@@ -3,30 +3,75 @@ import Link from 'next/link'
 
 const RegisterForm = () => {
   return (
-    <div className='  w-full flex items-center justify-center h-[100vh] bg-gray-600 -z-50 pb-24'>
-      <form action="">
-        <div className='bg-white w-96 p-6 rounded-md shadow-sm'>
+    <div className="  -z-50 flex h-[100vh] w-full items-center justify-center bg-gray-600 pb-24">
+      <form action="/register" method='POST'>
+        <div className="w-96 rounded-md bg-white p-6 shadow-sm">
           <div>
-            <h1 className='font-[MinimalBold] text-2xl flex justify-center items-center'>Keeblur Logo</h1>
-            <label className=' text-gray-700 font-[MinimalBold] text-xl'>First Name</label>
-            <input type="name" className='w-full py-2 bg-gray-50 text-gray-500 px-1 outline-none mb-4' />
-            <label className=' text-gray-700 font-[MinimalBold] text-xl'>Last Name</label>
-            <input type="name" className='w-full py-2 bg-gray-50 text-gray-500 px-1 outline-none mb-4' />
-            <label className=' text-gray-700 font-[MinimalBold] text-xl'>Email</label>
-            <input type="email" className='w-full py-2 bg-gray-50 text-gray-500 px-1 outline-none mb-4' />
-            <label className=' text-gray-700 font-[MinimalBold] text-xl'>Password</label>
-            <input type="password" className='w-full py-2 bg-gray-50 text-gray-500 px-1 outline-none mb-4' />
-            <label className=' text-gray-700 font-[MinimalBold] text-xl'>Confirm Password</label>
-            <input type="password" className='w-full py-2 bg-gray-50 text-gray-500 px-1 outline-none mb-4' />
-            <input type="checkbox" className='mb-6' id='remember' />
-            <label htmlFor='remember' className='text-gray-700 font-[MinimalRecular] text-xl'> Term of service</label>
-            <button type='submit' className='bg-blue-500 w-full text-gray-100 rounded-md py-2 hover:bg-blue-600 transition-colors'>Login</button>
-            <div className='flex flex-col justify-center items-center p-4 font-[MinimalRecular] text-xl'>
-              <Link href="/shop" >
-                <a className='pb-2'>Return to store</a>
+            <h1 className="flex items-center justify-center font-[MinimalBold] text-2xl">
+              Keeblur Logo
+            </h1>
+            <label className=" font-[MinimalBold] text-xl text-gray-700">
+              First Name
+            </label>
+            <input
+              className="mb-4 w-full bg-gray-50 py-2 px-1 text-gray-500 outline-none"
+              name='fName'
+              type="name"
+            />
+            <label className=" font-[MinimalBold] text-xl text-gray-700">
+              Last Name
+            </label>
+            <input
+              className="mb-4 w-full bg-gray-50 py-2 px-1 text-gray-500 outline-none"
+              name='lName'
+              type="name"
+            />
+            <label className=" font-[MinimalBold] text-xl text-gray-700">
+              Email
+            </label>
+            <input
+              className="mb-4 w-full bg-gray-50 py-2 px-1 text-gray-500 outline-none"
+              name='email'
+              type="email"
+            />
+            <label className=" font-[MinimalBold] text-xl text-gray-700">
+              Password
+            </label>
+            <input
+              className="mb-4 w-full bg-gray-50 py-2 px-1 text-gray-500 outline-none"
+              name='password'
+              type="password"
+            />
+            <label className=" font-[MinimalBold] text-xl text-gray-700">
+              Confirm Password
+            </label>
+            <input
+              className="mb-4 w-full bg-gray-50 py-2 px-1 text-gray-500 outline-none"
+              name='conPassword'
+              type="password"
+            />
+            <input type="checkbox" className="mb-6" id="remember" />
+            <label
+              htmlFor="remember"
+              className="font-[MinimalRecular] text-xl text-gray-700"
+            >
+              {' '}
+              Term of service
+            </label>
+            <button
+              type="submit"
+              className="w-full rounded-md bg-blue-500 py-2 text-gray-100 transition-colors hover:bg-blue-600"
+            >
+              Register
+            </button>
+            <div className="flex flex-col items-center justify-center p-4 font-[MinimalRecular] text-xl">
+              <Link href="/shop">
+                <a className="pb-2">Return to store</a>
               </Link>
               <Link href="/account/login">
-                <a>Have an account? <span className='text-red-500'>Sign In</span></a>
+                <a>
+                  Have an account? <span className="text-red-500">Sign In</span>
+                </a>
               </Link>
             </div>
           </div>
