@@ -19,7 +19,7 @@ export default Home
 
 export const getServerSideProps: GetServerSideProps = async () => {
 	// check if the user is logged in
-	const ifAuthenticated = true //i change this to test server
+	const ifAuthenticated = false
 
 	if (!ifAuthenticated) {
 		return { redirect: { destination: '/account/login', permanent: false } }
